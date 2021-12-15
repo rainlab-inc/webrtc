@@ -130,8 +130,8 @@ func (t *Track) Write(b []byte) (n int, err error) {
 }
 
 // WriteSample packetizes and writes to the track
-func (t *Track) WriteSample(s media.Sample) error {
-	packets := t.packetizer.Packetize(s.Data, s.Samples)
+func (t *Track) WriteSample(s media.Sample, sources []uint32) error {
+	packets := t.packetizer.Packetize(s.Data, s.Samples, sources)
 	for _, p := range packets {
 		err := t.WriteRTP(p)
 		if err != nil {

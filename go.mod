@@ -21,3 +21,5 @@ require (
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
 	golang.org/x/sys v0.0.0-20200724161237-0e2f3a69832c // indirect
 )
+
+replace github.com/pion/rtp v1.6.0 => github.com/rainlab-inc/rtp v1.6.0-rainlab
